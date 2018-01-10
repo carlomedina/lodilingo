@@ -1,10 +1,12 @@
 const express = require("express")
 const app = express();
+const http = require("http").Server(app);
 const bodyParser = require("body-parser");
 
 
 const danklodictionary = {
   "kuya" : "orb",
+  "bro" : "orb",
   "extreme" : "petmalu",
   "exceptional" : "petmalu",
   "cool" : "petmalu",
@@ -12,11 +14,11 @@ const danklodictionary = {
   "mom" : "mumshie",
   "mama" : "mumshie",
   "nanay" : "mumshie",
-  "salamat" : "matsala"
+  "salamat" : "matsala",
   "thank" : "matsala", // think of a way on how to make this handle thank you
   "pare" : "repa",
   "busog" : "sogbu",
-  "sarap" : "rapsa"
+  "sarap" : "rapsa",
   "bes" : "beshie",
   "hindi" : "dehins",
   "hinde" : "dehins",
@@ -39,9 +41,13 @@ app.get("/", function(req, res){
   // endpoint to send text to translate
 app.post("/translate", function(req, res){
   const text2translateArray = req.body.text.split(" ")
-  text2translateArray.map(function(curr, ind, arr) {
-
+  const translatedArray = text2translateArray.map(function(curr, ind, arr) {
+    if (danklodictionary[curr]) {
+      return danklodictionary[curr]
+    }
+    return curr
   })
+  res.send(translatedArray.join(" "))
 });
 
   // endpoint to give translation
