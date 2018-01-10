@@ -23,7 +23,7 @@ const danklodictionary = {
   "hindi" : "dehins",
   "hinde" : "dehins",
   "barkada" : "dabarkads",
-  "friends" : "dabarkads"
+  "friends" : "dabarkads",
 }
 
 
@@ -43,7 +43,7 @@ app.post("/translate", function(req, res){
   const text2translateArray = req.body.text.split(" ")
   const translatedArray = text2translateArray.map(function(curr, ind, arr) {
     if (danklodictionary[curr]) {
-      return danklodictionary[curr]
+      return danklodictionary[curr.toLowerCase()]
     }
     return curr
   })
