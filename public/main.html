@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<script>
+		function lodify() {
+			var xhr = new XMLHttpRequest();
+			const text2translate = document.getElementById('text-to-translate').text
+		    xhr.onreadystatechange = function() {
+		      console.log('sending');
+		      if (this.readyState == 4 && this.status == 200) {
+		        if (this.responseText) {
+		          console.log('received response');
+		          document.getElementById('translated-text').value = this.responseText
+		        } else {
+		          console.log('error');
+		        }
+		      }
+		    }
+		    xhr.open("POST", "/translate", true);
+		    xhr.setRequestHeader("Content-Type", "application/json");
+		    xhr.send(JSON.stringify({text: text2translate}));
+		}
+	</script>
+
+</head>
+<body>
+<div class="wrapper">
+	<div id="header">
+	</div>
+	<div id="text-box">
+		<input id="text-to-translate" type="text">
+		<button onclick="lodify();">LODIFY</button>
+	</div>
+	<div id="translation">
+		<input id="translated-text" type="text" disabled="true">
+	</div>
+</body>
+</html>

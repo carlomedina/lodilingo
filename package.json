@@ -1,0 +1,19 @@
+{
+  "name": "lodilingo",
+  "version": "1.0.0",
+  "description": "the one and (hopefully) only lodi translator you'll ever need",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlomedina/lodilingo.git"
+  },
+  "author": "smikatoots and carlomedina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carlomedina/lodilingo/issues"
+  },
+  "homepage": "https://github.com/carlomedina/lodilingo#readme"
+}
