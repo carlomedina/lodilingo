@@ -93,7 +93,7 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 
 app.get("/", function(req, res){
-  res.sendFile(__dirname + "/main.html")
+  res.sendFile(__dirname + "/public/main.html")
 });
 
   // ENDPOINT to send text to translate
@@ -178,7 +178,7 @@ function lodifyWord(word) {
       return danklodictionary[word.toLowerCase()].word[0]
     }
 
-  // else create it on the fly 
+  // else create it on the fly
     else {
       var rand = Math.random()
       // if random number is greater than some threshold, do it
@@ -197,9 +197,9 @@ function lodifyWord(word) {
               return letterlist.slice(i+1,letterlist.length).join('') + letterlist.slice(0,i+1).join('')
             }
           }
-          curr = newpantig    
+          curr = newpantig
         }
-      } 
+      }
       // else return the original word
       else {
         return word
@@ -211,7 +211,7 @@ function lodifyWord(word) {
 function lodify(sentence) {
   // pad punctuation marks with space
   // then split by space
-  const wordlist = sentence.replace(/['!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~']/g, ' $& ').split(' ') 
+  const wordlist = sentence.replace(/['!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~']/g, ' $& ').split(' ')
   const lodified = wordlist.map(function (curr, ind, array) {
     return lodifyWord(curr)
   })
@@ -225,22 +225,3 @@ function lodify(sentence) {
 http.listen(3000, function(){
   console.log("listening on *:3000");
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
