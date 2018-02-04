@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/carlomedina/lodilingo/issues"
   },
+  "dependencies": {
+    "express": "latest"
+  },
   "homepage": "https://github.com/carlomedina/lodilingo#readme"
 }
