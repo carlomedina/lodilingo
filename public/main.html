@@ -6,7 +6,7 @@
 	<script>
 		function lodify() {
 			var xhr = new XMLHttpRequest();
-			const text2translate = document.getElementById('text-to-translate').text
+			const text2translate = document.getElementById('text-to-translate').value
 		    xhr.onreadystatechange = function() {
 		      console.log('sending');
 		      if (this.readyState == 4 && this.status == 200) {
