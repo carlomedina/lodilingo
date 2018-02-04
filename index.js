@@ -5,6 +5,10 @@ const bodyParser = require("body-parser");
 
 
 const danklodictionary = {
+  "idol" : {
+    "word" : ["lodi"],
+    "rating" : 999
+    },
   "kuya" : {
     "word" : ["orb"],
     "rating" : 999
